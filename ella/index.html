@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ella Thorburn | GRAVID-AMEN</title>
+<meta name="description" content="Ella Thorburn's individual work on GRAVID-AMEN: building, deploying and handing over an offline-first maternal health application.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav-wrap">
+<nav class="nav" aria-label="Main">
+<a class="brand" href="../index.html">GRAVID-AMEN</a>
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+<li><a href="../poster.html">Poster</a></li>
+<li><a class="cur" href="index.html" aria-current="page">Ella Thorburn</a></li>
+<li><a href="../sarah/index.html">Sarah-Jane Marais</a></li>
+</ul>
+<details class="nav-menu">
+<summary><span class="burger" aria-hidden="true"></span>Menu</summary>
+<ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../poster.html">Poster</a></li>
+<li><a class="cur" href="index.html" aria-current="page">Ella Thorburn</a></li>
+<li><a href="../sarah/index.html">Sarah-Jane Marais</a></li>
+</ul>
+</details>
+</nav>
+</header>
+
+<main id="main">
+
+<!-- 1. Header -->
+<section class="sec" aria-labelledby="ella-h">
+<div class="wrap">
+<div class="split stretch">
+<div>
+<p class="pill-sub">Individual page</p>
+<h1 class="page-title" id="ella-h">GRAVID-AMEN: Building, Deploying and Handing Over a Maternal Health Application</h1>
+<p class="byline">Ella Thorburn</p>
+<p>Honours in Computer Science, University of Cape Town, 2026<br>Supervisor: A/Prof Melissa Densmore</p>
+<div class="row mt">
+<a class="btn primary" href="docs/paper.pdf">Download the paper (PDF)</a>
+<a class="btn secondary" href="#downloads">Source code (ZIP)</a>
+</div>
+</div>
+<div class="card soft centre">
+<h2 class="pill-sub">Ella's part of the project</h2>
+<ul class="dots">
+<li>Development of the app and the content dashboard</li>
+<li>Deployment to phones at three clinics</li>
+<li>Handover to the University of Limpopo AMEN team</li>
+</ul>
+<p class="small mt">Field results are on <a class="lnk" href="../sarah/index.html">Sarah-Jane Marais's page</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 2. Summary -->
+<section class="sec" aria-labelledby="sum-h">
+<div class="wrap">
+<div class="sec-head"><h2 class="pill" id="sum-h">Summary</h2></div>
+<div class="card">
+<p>Ella built GRAVID-AMEN, an offline-first maternal nutrition app for rural Limpopo, through a field build and a post-fieldwork build, then handed it over to a developer employed by the University of Limpopo AMEN team. The receiving developer's build was used in a wider pilot in August.</p>
+<p>The paper finds that documented, runnable code is not enough for continuity. Access to project artefacts has to stay with the project, recorded reasoning has to reach the receiving developer, and maintenance notices have to reach someone responsible and able to act.</p>
+</div>
+</div>
+</section>
+
+<!-- 3. Aims -->
+<section class="sec" aria-labelledby="aims-h">
+<div class="wrap">
+<div class="sec-head"><h2 class="pill" id="aims-h">Aims</h2></div>
+<div class="g2">
+<div class="card"><div class="letter round" aria-hidden="true">1</div><h3>Aim 1: Design and development</h3><p>Build the app against the product requirements, first to a version fit for field work, then to one ready for continued development and deployment.</p></div>
+<div class="card"><div class="letter round" aria-hidden="true">2</div><h3>Aim 2: Maintainability</h3><p>Build the app so a receiving developer can set it up, understand it and iterate on it.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 4. Three builds -->
+<section class="sec" aria-labelledby="builds-h">
+<div class="wrap">
+<div class="sec-head"><h2 class="pill" id="builds-h">Three builds</h2></div>
+<ol class="tl">
+<li class="tl-item">
+<div class="tl-dot" aria-hidden="true">1</div>
+<div class="card"><h3>Field build</h3><p>Fully offline, with content bundled into the app. Used at three clinics.</p></div>
+</li>
+<li class="tl-item">
+<div class="tl-dot" aria-hidden="true">2</div>
+<div class="card"><h3>Post-fieldwork build</h3><p>Remote backend, download on demand, synchronisation, a content dashboard and dependency monitoring.</p></div>
+</li>
+<li class="tl-item outline">
+<div class="tl-dot" aria-hidden="true">3</div>
+<div class="card"><h3>Pilot build</h3><p>Written by the receiving developer at the University of Limpopo and used in the August pilot.</p></div>
+</li>
+</ol>
+</div>
+</section>
+
+<!-- 5. Requirements analysis -->
+<section class="sec" aria-labelledby="req-h">
+<div class="wrap">
+<div class="sec-head"><h2 class="pill" id="req-h">Requirements analysis</h2></div>
+<p class="measure">The inherited product requirements document was only partly adapted from the Nigerian GRAVID app and contained contradictions, such as naming Swahili as the second language for a Sepedi-speaking region. Ella audited it against the users' realities and produced four sets of requirements.</p>
+<div class="g4 mt">
+<div class="stat"><span class="num">10</span><span class="lbl">user conditions</span></div>
+<div class="stat"><span class="num">25</span><span class="lbl">functional requirements</span></div>
+<div class="stat"><span class="num">11</span><span class="lbl">non-functional requirements</span></div>
+<div class="stat"><span class="num">7</span><span class="lbl">maintainability requirements</span></div>
+</div>
+<div class="card warm mt">
+<h3 class="pill-sub brick">Two requirements rejected</h3>
+<div class="g2">
+<div>
+<h4>Phone-number registration with an SMS one-time passcode</h4>
+<p>It needs a connection at first launch, and the app must work offline. The app signs users in anonymously instead.</p>
+</div>
+<div>
+<h4>A 2 MB limit per content bundle</h4>
+<p>Audio and video of usable quality are seldom under 2 MB.</p>
+</div>
+</div>
+<p class="small mt note-top">The maintainability requirements were drawn from two earlier UCT HCI Lab projects (Milk Matters and the Bhabhisana Baby Project), the literature, and interviews with people from those projects and the AMEN project lead.</p>
+</div>
+</div>
+</section>
+
+<!-- 6. The field build -->
+<section class="sec" aria-labelledby="fb-h">
+<div class="wrap">
+<div class="sec-head"><h2 class="pill" id="fb-h">The field build</h2></div>
+<div class="split">
+<div class="stack">
+<div class="card"><h3 class="pill-sub">Content as data</h3><p>Content items carry attributes such as language, media type, tags, and which roles and pregnancy stage they are relevant for, so screens render content from data.</p></div>
+<div class="card"><h3 class="pill-sub">One content repository</h3><p>Every screen reads content through a single content repository, so serving content from a remote source could be added later.</p></div>
+<div class="card"><h3 class="pill-sub">Two languages, one entry</h3><p>Sepedi and English versions of an item share a canonical identifier and appear as one entry. Interface text switches language without a restart and is worded for the user's role: a family member and a pregnant woman read the same fact addressed differently.</p></div>
+<div class="card"><h3 class="pill-sub">Shared phones</h3><p>The app supports multiple profiles on one phone, because phones are often shared.</p></div>
+<div class="card"><h3 class="pill-sub">A familiar layout</h3><p>The layout follows WhatsApp's conventions, the platform participants already used: five-item bottom navigation, content rows with a thumbnail and title, filter chips, and settings rows with an icon and chevron.</p></div>
+</div>
+<div class="figs">
+<figure class="fig">
+<div class="shots">
+<a class="phone sm shot" href="../images/app-food-filter.jpg"><img src="../images/app-food-filter.jpg" alt="The Food tab: the Nutrition lesson list with the Protein filter chip selected, showing two lessons as rows with a thumbnail and title" width="720" height="1600"></a>
+<a class="phone sm shot" href="../images/app-guidance.jpg"><img src="../images/app-guidance.jpg" alt="The Guidance tab: a grid of four topic tiles, Danger signs, Breastfeeding, Preparing for birth and Mental wellbeing" width="720" height="1600"></a>
+</div>
+<figcaption class="cap">The Food and Guidance tabs, side by side.</figcaption>
+</figure>
+<figure class="fig">
+<div class="shots">
+<a class="phone sm shot" href="../images/app-profile-picker.jpg"><img src="../images/app-profile-picker.jpg" alt="The profile picker, titled Who's using?, listing a family member profile and a pregnant mother profile, with an option to add another person" width="720" height="1600"></a>
+</div>
+<figcaption class="cap">The profile picker.</figcaption>
+</figure>
+<figure class="fig">
+<div class="shots">
+<a class="phone sm shot" href="../images/app-home-family.jpg"><img src="../images/app-home-family.jpg" alt="Home screen for a family member: Hello Family Member! She is in trimester 2 and should eat healthy fats and calcium foods. Read this to help her." width="720" height="1600"></a>
+<a class="phone sm shot" href="../images/app-home-pregnant.jpg"><img src="../images/app-home-pregnant.jpg" alt="Home screen for a pregnant woman: Hello Jane! You are in trimester 2 and should eat healthy fats and calcium foods. Read this now." width="720" height="1600"></a>
+</div>
+<figcaption class="cap">The home screen for a family member and a pregnant woman, side by side.</figcaption>
+</figure>
+<figure class="fig">
+<div class="shots two">
+<a class="phone sm shot" href="../images/app-onboarding-1-language.jpg"><img src="../images/app-onboarding-1-language.jpg" alt="Onboarding: choose your language, English or Sepedi" width="720" height="1600"></a>
+<a class="phone sm shot" href="../images/app-onboarding-2-role.jpg"><img src="../images/app-onboarding-2-role.jpg" alt="Onboarding: Who are you? I'm pregnant, Family member, or Community health worker" width="720" height="1600"></a>
+<a class="phone sm shot" href="../images/app-onboarding-3-name.jpg"><img src="../images/app-onboarding-3-name.jpg" alt="Onboarding: What's your name? Fields for first name, last name and age" width="720" height="1600"></a>
+<a class="phone sm shot" href="../images/app-onboarding-4-due-date.jpg"><img src="../images/app-onboarding-4-due-date.jpg" alt="Onboarding: When is your baby due? Enter weeks pregnant or choose a due date" width="720" height="1600"></a>
+</div>
+<figcaption class="cap">The onboarding steps: language, role, name and due date.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 7. Field deployment -->
+<section class="sec" aria-labelledby="fd-h">
+<div class="wrap">
+<div class="sec-head"><h2 class="pill" id="fd-h">Field deployment</h2></div>
+<div class="g3">
+<div class="stat"><span class="num">34</span><span class="lbl">devices installed</span></div>
+<div class="stat"><span class="num">51</span><span class="lbl">participants</span></div>
+<div class="stat"><span class="num">3</span><span class="lbl">clinics</span></div>
+</div>
+<div class="card mt">
+<h3 class="pill-sub">Installation method</h3>
+<div class="bar" role="img" aria-label="Stacked bar of installation method: 24 devices by USB sideloading, 7 by Quick Share, 3 by local Wi-Fi hotspot">
+<div class="c-sage f24">24</div>
+<div class="c-terra f7">7</div>
+<div class="c-gold f3">3</div>
+</div>
+<ul class="legend">
+<li><span class="sw c-sage"></span>USB sideloading: 24 devices</li>
+<li><span class="sw c-terra"></span>Quick Share: 7 devices</li>
+<li><span class="sw c-gold"></span>Local Wi-Fi hotspot: 3 devices</li>
+</ul>
+</div>
+<p class="mt measure">The 24 USB-captured devices came from six manufacturers and at least eighteen models, all budget or entry-level. Two installations failed for lack of storage space.</p>
+<div class="band mt">
+<h3>A familiar layout did not make affordances clear</h3>
+<ul class="dots white">
+<li>Participants found content rows but did not tap them.</li>
+<li>They often did not realise form fields needed input.</li>
+<li>They did not recognise the exclamation-mark icon as the emergency tab.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- 8. The post-fieldwork build -->
+<section class="sec" aria-labelledby="pf-h">
+<div class="wrap">
+<div class="sec-head"><h2 class="pill" id="pf-h">The post-fieldwork build</h2></div>
+
+<figure class="fig">
+<!-- Diagram to be supplied: replace the inner .flow div with
+     <img src="../images/content-flow.svg" alt="..." width="..." height="..."> -->
+<div class="card soft">
+<div class="flow" role="img" aria-label="Content flow diagram: the content dashboard writes to the backend. On the phone, bundled content, a mirror of the content data and downloaded media are merged by the content repository for the screens.">
+<div class="fbox">Content dashboard</div>
+<span class="arrow" aria-hidden="true">→</span>
+<div class="fbox">Backend</div>
+<span class="arrow" aria-hidden="true">→</span>
+<div class="fdev">
+<span class="tag">On the phone</span>
+<div class="fbox soft">Bundled content</div>
+<div class="fbox soft">Mirror of the content data</div>
+<div class="fbox soft">Downloaded media</div>
+</div>
+<span class="arrow" aria-hidden="true">→</span>
+<div class="fbox accent">Content repository</div>
+<span class="arrow" aria-hidden="true">→</span>
+<div class="fbox">Screens</div>
+</div>
+</div>
+<figcaption class="cap">Content flow. The content dashboard writes to the backend. The device keeps bundled content, a mirror of the content data and downloaded media, and the content repository merges them for the screens.</figcaption>
+</figure>
+
+<div class="g2 mt">
+<div class="card">
+<h3 class="pill-sub">Download on demand</h3>
+<p>Downloads resume from where they stopped on an intermittent connection, and a download is refused if the phone lacks space for it.</p>
+<figure class="fig mt">
+<div class="shots">
+<a class="phone sm shot" href="../images/app-lesson-before-download.jpg"><img src="../images/app-lesson-before-download.jpg" alt="A video lesson, Nutrition during pregnancy, with a Save offline button" width="720" height="1600"></a>
+<a class="phone sm shot" href="../images/app-lesson-after-download.jpg"><img src="../images/app-lesson-after-download.jpg" alt="The same lesson marked Saved offline: plays without airtime or signal, with a delete button" width="720" height="1600"></a>
+</div>
+<figcaption class="cap">A lesson before and after download.</figcaption>
+</figure>
+</div>
+<div class="card wide">
+<h3 class="pill-sub">Content dashboard</h3>
+<p>A web dashboard where a non-technical partner adds and edits lessons as draggable blocks of text, audio, image and video, with a live preview, without a developer.</p>
+<figure class="fig mt">
+<div class="g2">
+<a class="win shot" href="../images/dashboard-content-list.png"><img src="../images/dashboard-content-list.png" alt="The content dashboard list: three published lessons with status, type and language filters, and Edit and Unpublish buttons" width="1428" height="641"></a>
+<a class="win shot" href="../images/dashboard-editor.png"><img src="../images/dashboard-editor.png" alt="The lesson editor: title, description, thumbnail, kind and topic fields on the left, a video upload in the middle and a live phone preview on the right" width="1425" height="639"></a>
+</div>
+<figcaption class="cap">The dashboard content list and the lesson editor with its live preview.</figcaption>
+</figure>
+</div>
+<div class="card">
+<h3 class="pill-sub">Monthly health check</h3>
+<p>An automated monthly check of the app's dependencies emails the project lead a plain-language status and asks her to forward it to whoever holds the technical contract.</p>
+<figure class="fig mt">
+<!-- Screenshot to be supplied: replace this div with
+     <a class="win shot" href="../images/health-check-email.png"><img src="../images/health-check-email.png" alt="..." width="..." height="..."></a> -->
+<div class="win tall" role="img" aria-label="Screenshot of the health-check email">Screenshot placeholder: health-check email</div>
+<figcaption class="cap">The health-check email.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 9. Handover -->
+<section class="sec" aria-labelledby="ho-h">
+<div class="wrap">
+<div class="sec-head"><h2 class="pill" id="ho-h">Handover</h2></div>
+<div class="split">
+<figure class="fig card">
+<div class="sessions" role="img" aria-label="Eight session markers: four filled, four outlined">
+<span class="sess on"></span><span class="sess on"></span><span class="sess on"></span><span class="sess on"></span>
+<span class="sess"></span><span class="sess"></span><span class="sess"></span><span class="sess"></span>
+</div>
+<figcaption class="cap left">4 of 8 planned sessions took place</figcaption>
+</figure>
+<div>
+<p>Ella handed over the source code and accounts, the unmet requirements, and the changes the field work showed were needed, each recommendation given with the field observation behind it.</p>
+<p>The receiving developer had the code running by the end of the first session and completed four starter tasks within three days. The AMEN project lead was given full access to the database and the repository.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 10. Results -->
+<section class="sec" aria-labelledby="res-h">
+<div class="wrap">
+<div class="sec-head"><h2 class="pill" id="res-h">Results</h2></div>
+<table class="rt">
+<caption class="vh">Requirements status</caption>
+<thead><tr><th scope="col">Requirement</th><th scope="col">Result</th><th scope="col">Status</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Requirement">Launch time</td>
+<td data-label="Result">Median 1452.5 ms against a 3-second target</td>
+<td data-label="Status"><span class="chip met"><span aria-hidden="true">✓</span>Met</span></td>
+</tr>
+<tr>
+<td data-label="Requirement">Low-memory devices</td>
+<td data-label="Result">Runs on 2 GB RAM devices</td>
+<td data-label="Status"><span class="chip met"><span aria-hidden="true">✓</span>Met</span></td>
+</tr>
+<tr>
+<td data-label="Requirement">Installed package</td>
+<td data-label="Result">64.5 MB against a 50 MB target</td>
+<td data-label="Status"><span class="chip notmet"><span aria-hidden="true">✕</span>Not met</span></td>
+</tr>
+<tr>
+<td data-label="Requirement">On-device encryption</td>
+<td data-label="Result">Discussed in the handover</td>
+<td data-label="Status"><span class="chip nv"><span aria-hidden="true">?</span>Not verified</span></td>
+</tr>
+<tr>
+<td data-label="Requirement">Handed-over functional requirements</td>
+<td data-label="Result">8 of 11 observed implemented in a demonstration. Not verified against source code.</td>
+<td data-label="Status"><span class="chip nv"><span aria-hidden="true">?</span>Not verified</span></td>
+</tr>
+<tr>
+<td data-label="Requirement">Maintainability requirements</td>
+<td data-label="Result">4 of 7 met, 2 partly met. Dependency monitoring is met for packages, not for platform notices.</td>
+<td data-label="Status"><div class="chips"><span class="chip met"><span aria-hidden="true">✓</span>Met: 4 of 7</span><span class="chip partly"><span aria-hidden="true">◐</span>Partly met: 2 of 7</span></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- 11. Findings -->
+<section class="sec" aria-labelledby="find-h">
+<div class="wrap">
+<div class="sec-head"><h2 class="pill" id="find-h">Findings</h2></div>
+<div class="g3">
+<div class="card"><h3>A familiar layout did not make affordances clear</h3><p>Participants found content rows but did not tap them, often did not realise form fields needed input, and did not recognise the exclamation-mark icon as the emergency tab. Local input is needed on iconography as well as content.</p></div>
+<div class="card"><h3>Continuity fails independently of documentation</h3><p>In the earlier projects, what was missing was a place in the institution for access to be held.</p></div>
+<div class="card"><h3>Recorded reasoning is not enough on its own</h3><p>How it is passed on, and whether it reaches the receiving developer, matter as much.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 12. Downloads -->
+<section class="sec" id="downloads" aria-labelledby="dl-h">
+<div class="wrap">
+<div class="sec-head"><h2 class="pill" id="dl-h">Downloads</h2></div>
+<div class="g2">
+<a class="dl" href="docs/paper.pdf"><span class="dl-ico" aria-hidden="true">PDF</span><span class="dl-txt"><span class="dl-name">Final paper</span><span class="dl-meta">paper.pdf · PDF · 5.0 MB</span></span><span class="dl-go">Download</span></a>
+<a class="dl" href="docs/literature-review.pdf"><span class="dl-ico" aria-hidden="true">PDF</span><span class="dl-txt"><span class="dl-name">Literature review</span><span class="dl-meta">literature-review.pdf · PDF · 391 KB</span></span><span class="dl-go">Download</span></a>
+<a class="dl" href="../downloads/gravid-amen-app.zip"><span class="dl-ico zip" aria-hidden="true">ZIP</span><span class="dl-txt"><span class="dl-name">Mobile app source code</span><span class="dl-meta">gravid-amen-app.zip · ZIP · [size]</span></span><span class="dl-go">Download</span></a>
+<a class="dl" href="../downloads/content-dashboard.zip"><span class="dl-ico zip" aria-hidden="true">ZIP</span><span class="dl-txt"><span class="dl-name">Content dashboard source code</span><span class="dl-meta">content-dashboard.zip · ZIP · [size]</span></span><span class="dl-go">Download</span></a>
+</div>
+<!-- If the content dashboard is hosted, uncomment this block and set the address:
+<div class="mt narrow">
+<a class="dl" href="https://EXAMPLE/"><span class="dl-ico ext" aria-hidden="true">WEB</span><span class="dl-txt"><span class="dl-name">Live content dashboard (external, non-permanent link)</span><span class="dl-meta">Hosted web application</span></span></a>
+</div>
+-->
+<div class="row links mt">
+<a class="lnk" href="../index.html">Back to the project home page</a>
+<a class="lnk" href="../sarah/index.html">Sarah-Jane Marais's page</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="foot">
+<div class="in">
+<div>
+<h2>University of Cape Town</h2>
+<p>GRAVID-AMEN is an Honours in Computer Science project at the University of Cape Town, School of IT, in partnership with the AMEN team at the University of Limpopo.</p>
+<p>Last updated: <time datetime="2026-10-09">9 October 2026</time></p>
+</div>
+<div>
+<h2>Contact</h2>
+<ul>
+<li>Ella Thorburn: <a href="mailto:threll002@myuct.ac.za">threll002@myuct.ac.za</a></li>
+<li>Sarah-Jane Marais: <a href="mailto:mrssar011@myuct.ac.za">mrssar011@myuct.ac.za</a></li>
+<li>Supervisor, A/Prof Melissa Densmore: <a href="mailto:melissa.densmore@uct.ac.za">melissa.densmore@uct.ac.za</a></li>
+</ul>
+</div>
+<div>
+<h2>Site</h2>
+<ul>
+<li><a href="../index.html">Project home</a></li>
+<li><a href="../poster.html">Poster</a></li>
+<li><a href="index.html">Ella Thorburn</a></li>
+<li><a href="../sarah/index.html">Sarah-Jane Marais</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body>
+</html>
